@@ -104,3 +104,15 @@ stop.MouseButton1Click:Connect(function()
     sound:Stop() 
     sound:Play()
 end)
+local sit = Instance.new("TextButton", panel)
+sit.Position = UDim2.new(0.03, 0, 0.334, 0)
+sit.Size = UDim2.new(0.141, 0, 0.082, 0)
+sit.BackgroundColor3 = Color3.fromRGB(0, 127, 0)
+sit.TextColor3 = Color3.fromRGB(255, 255, 255)
+sit.Font = Enum.Font.GothamBold
+sit.BorderSizePixel = 0
+sit.Text = "Сесть"
+sit.TextScaled = true 
+sit.MouseButton1Click:Connect(function()
+    p.Character.Humanoid.Sit = true    
+end)
