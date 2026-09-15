@@ -54,9 +54,36 @@ corner3.CornerRadius = UDim.new(0.3, 0)
 sit.MouseButton1Click:Connect(function()
     p.Character.Humanoid.Sit = true
 end)
+local speedtb = Instance.new("TextBox", panel)
+speedtb.Size = UDim2.new(0.172, 0, 0.097, 0)
+speedtb.Position = UDim2.new(0.28, 0, 0.188, 0)
+speedtb.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+speedtb.TextColor3 = Color3.fromRGB(255, 255, 255)
+speedtb.PlaceholderColor3 = Color3.fromRGB(183, 183, 183)
+speedtb.BorderSizePixel = 0
+speedtb.TextScaled = true 
+speedtb.Font = Enum.Font.GothamBold
+speedtb.Text = "" 
+speedtb.PlaceholderText = "Speed (classic: 16)"
+local corner4 = Instance.new("UICorner", speedtb)
+corner4.CornerRadius = UDim.new(0.3, 0)
+local speedb = Instance.new("TextButton", panel)
+speedb.Position = UDim2.new(0.493, 0, 0.187, 0)
+speedb.Size = UDim2.new(0.172, 0, 0.098, 0)
+speedb.TextColor3 = Color3.fromRGB(255, 255, 255)
+speedb.BorderSizePixel = 0
+speedb.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
+speedb.Font = Enum.Font.GothamBold
+speedb.TextScaled = true
+speedb.Text = "Set speed"
+local corner5 = Instance.new("UICorner", speedb)
+corner5.CornerRadius = UDim.new(0.3, 0) 
+speedb.MouseButton1Click:Connect(function()
+    p.Character.Humanoid.WalkSpeed = speedtb.Text
+end)
 local sound = Instance.new("Sound", workspace)
 sound.SoundId = "rbxassetid://131912852031166"
 sound:Play() 
 task.wait(2)
 sound:Destroy()
-
+ 
