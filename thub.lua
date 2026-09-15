@@ -1,5 +1,7 @@
 local s = true 
 local p = game.Players.LocalPlayer
+local sp = 16 
+task.wait(0.5)
 local pg = p:WaitForChild("PlayerGui")
 local sgui = Instance.new("ScreenGui", pg)
 sgui.ResetOnSpawn = false
@@ -79,11 +81,14 @@ speedb.Text = "Set speed"
 local corner5 = Instance.new("UICorner", speedb)
 corner5.CornerRadius = UDim.new(0.3, 0) 
 speedb.MouseButton1Click:Connect(function()
-    p.Character.Humanoid.WalkSpeed = speedtb.Text
+    sp = speedtb.Text
 end)
 local sound = Instance.new("Sound", workspace)
 sound.SoundId = "rbxassetid://131912852031166"
 sound:Play() 
 task.wait(2)
 sound:Destroy()
- 
+
+while task.wait(0.01) do
+    p.Character.Humanoid.WalkSpeed = sp
+end
