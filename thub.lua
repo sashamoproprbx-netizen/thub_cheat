@@ -1,8 +1,13 @@
+local runs = game:GetService("RunService")
+local spinning = false
+local spins = true
 local p = game.Players.LocalPlayer
 local char = p.Character
+local hrp = char:WaitForChild("HumanoidRootPart")
 local hum = char:WaitForChild("Humanoid")
 p.CharacterAdded:Connect(function() 
     char = p.Character
+    hrp = char:WaitForChild("HumanoidRootPart") 
     hum = char:WaitForChild("Humanoid")
 end) 
 local cs = true
@@ -59,4 +64,34 @@ sit.MouseButton1Click:Connect(function()
     hum.Sit = true
 end)
 local corner3 = Instance.new("UICorner", sit)
-corner3.CornerRadius = UDim.new(0.3, 0)
+corner3.CornerRadius = UDim.new(0.3, 0) 
+runs.Heartbeat:Connect(function(dt)
+    if spinning then
+        hrp.CFrame = hrp.CFrame * CFrame.Angles(math.rad(999), math.rad(9999999999) * dt, math.rad(999))
+        hum.Sit = true 
+        hum.Jump = true
+    end
+end)
+local spin = Instance.new("TextButton", panel)
+spin.Position = UDim2.new(0.222, 0, 0.187, 0) 
+spin.Size = UDim2.new(0.15, 0, 0.079, 0)
+spin.BorderSizePixel = 0 
+spin.BackgroundColor3 = Color3.fromRGB(32, 32, 32)
+spin.TextScaled = true 
+spin.TextColor3 = Color3.fromRGB(255, 255, 255)
+spin.Font = Enum.Font.GothamBold
+spin.Text = "Fling"
+spin.MouseButton1Click:Connect(function()
+    if spins then
+        spins = false
+        spinning = true
+        spin.Text = "Unfling"
+    else 
+        spins = true
+        spinning = false
+        spin.Text = "Fling" 
+    end
+end) 
+local corner4 = Instance.new("UICorner", spin)
+corner4.CornerRadius = UDim.new(0.3, 0)
+
