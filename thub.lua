@@ -68,8 +68,7 @@ corner3.CornerRadius = UDim.new(0.3, 0)
 runs.Heartbeat:Connect(function(dt)
     if spinning then
         hrp.CFrame = hrp.CFrame * CFrame.Angles(math.rad(999), math.rad(9999999999) * dt, math.rad(999))
-        hum.Sit = true 
-        hum.Jump = true
+        hum.Sit = true
     end
 end)
 local spin = Instance.new("TextButton", panel)
