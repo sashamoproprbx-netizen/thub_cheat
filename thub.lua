@@ -1,5 +1,6 @@
 local runs = game:GetService("RunService")
 local spinning = false
+local speed = 16
 local spins = true
 local p = game.Players.LocalPlayer
 local char = p.Character
@@ -93,4 +94,33 @@ spin.MouseButton1Click:Connect(function()
 end) 
 local corner4 = Instance.new("UICorner", spin)
 corner4.CornerRadius = UDim.new(0.3, 0)
-
+local stb = Instance.new("TextBox", panel)
+stb.Position = UDim2.new(0.407, 0, 0.187, 0)
+stb.Size = UDim2.new(0.15, 0, 0.079, 0) 
+stb.BorderSizePixel = 0
+stb.BackgroundColor3 = Color3.fromRGB(32,32, 32)
+stb.TextColor3 = Color3.fromRGB(255, 255, 255)
+stb.PlaceholderColor3 = Color3.fromRGB(196, 196, 196)
+stb.Text = "" 
+stb.PlaceholderText = "Speed (classic: 16)"
+stb.TextScaled = true 
+stb.Font = Enum.Font.GothamBold
+local corner5 = Instance.new("UICorner", stb)
+corner5.CornerRadius = UDim.new(0.3, 0)
+local sb = Instance.new("TextButton", panel) 
+sb.Position = UDim2.new(0.592, 0, 0.187, 0) 
+sb.Size = UDim2.new(0.15, 0, 0.079, 0) 
+sb.BorderSizePixel = 0
+sb.TextColor3 = Color3.fromRGB(255, 255, 255)
+sb.BackgroundColor3 = Color3.fromRGB(32, 32, 32)
+sb.Text = "Set speed"
+sb.TextScaled = true
+sb.Font = Enum.Font.GothamBold
+sb.MouseButton1Click:Connect(function()
+    speed = stb.Text
+end)
+local corner6 = Instance.new("UICorner", sb)
+corner6.CornerRadius = UDim.new(0.3, 0)
+while task.wait(0.001) do
+    hum.WalkSpeed = speed
+end 
