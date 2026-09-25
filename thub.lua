@@ -122,7 +122,7 @@ end)
 local corner6 = Instance.new("UICorner", sb)
 corner6.CornerRadius = UDim.new(0.3, 0)
 local imgmeme = Instance.new("ImageLabel", panel)
-imgmeme.Image = "rbxthumb://type=Asset&id=96892564901024&w=420&h=420"
+imgmeme.Image = "rbxthumb://type=Asset&id=122421078142529&w=420&h=420"
 imgmeme.BorderSizePixel = 0
 imgmeme.Position = UDim2.new(0.622, 0, 0.02, 0)
 imgmeme.Size = UDim2.new(0.153, 0, 0.144, 0)
