@@ -122,13 +122,30 @@ end)
 local corner6 = Instance.new("UICorner", sb)
 corner6.CornerRadius = UDim.new(0.3, 0)
 local imgmeme = Instance.new("ImageLabel", panel)
-imgmeme.Image = "rbxthumb://type=Asset&id=122421078142529&w=420&h=420"
+imgmeme.Image = "rbxthumb://type=Asset&id=96892564901024&w=420&h=420"
 imgmeme.BorderSizePixel = 0
 imgmeme.Position = UDim2.new(0.622, 0, 0.02, 0)
 imgmeme.Size = UDim2.new(0.153, 0, 0.144, 0)
 local corner7 = Instance.new("UICorner", imgmeme)
 corner7.CornerRadius = UDim.new(0.3, 0)
+local linuxb = Instance.new("TextButton", panel)
+linuxb.Position = UDim2.new(0.037, 0, 0.287, 0)
+linuxb.Size = UDim2.new(0.15, 0, 0.079, 0)
+linuxb.Font = Enum.Font.GothamBold
+linuxb.Text = "Linux.."
+linuxb.TextColor3 = Color3.fromRGB(255, 255, 255)
+linuxb.BorderSizePixel = 0
+linuxb.BackgroundColor3 = Color3.fromRGB(32, 32, 32)
+linuxb.TextScaled = true
+local corner8 = Instance.new("UICorner", linuxb)
+corner8.CornerRadius = UDim.new(0.3, 0)
+local linuxs = Instance.new("Sound", panel)
+linuxs.SoundId = "rbxassetid://86897517218591"
+linuxs.Pitch = 0.56
+linuxs.Playing = false
+linuxb.MouseButton1Click:Connect(function()
+    linuxs:Play()
+end)
 while task.wait(0.001) do
     hum.WalkSpeed = speed
 end
-
